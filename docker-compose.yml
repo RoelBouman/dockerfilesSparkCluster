@@ -15,6 +15,7 @@ services:
        - /mnt/spark-apps:/opt/spark-apps
        - /mnt/spark-data/beamformed:/opt/spark-data/beamformed
        - /mnt/spark-data/weather:/opt/spark-data/weather
+       - /mnt/spark-data/metadata:/opt/spark-data/metadata
   spark-worker-1:
     image: bde2020/spark-worker:2.4.1-hadoop2.7
     mem_limit: 2G
@@ -32,6 +33,7 @@ services:
        - /mnt/spark-apps:/opt/spark-apps
        - /mnt/spark-data/beamformed:/opt/spark-data/beamformed
        - /mnt/spark-data/weather:/opt/spark-data/weather
+       - /mnt/spark-data/metadata:/opt/spark-data/metadata
   spark-worker-2:
     image: bde2020/spark-worker:2.4.1-hadoop2.7
     mem_limit: 2G
@@ -49,6 +51,7 @@ services:
        - /mnt/spark-apps:/opt/spark-apps
        - /mnt/spark-data/beamformed:/opt/spark-data/beamformed
        - /mnt/spark-data/weather:/opt/spark-data/weather
+       - /mnt/spark-data/metadata:/opt/spark-data/metadata
 networks:
   spark-network:
     driver: bridge
