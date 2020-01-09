@@ -16,6 +16,10 @@ services:
        - /mnt/spark-data/beamformed:/opt/spark-data/beamformed
        - /mnt/spark-data/weather:/opt/spark-data/weather
        - /mnt/spark-data/metadata:/opt/spark-data/metadata
+       - /mnt/spark-results:/opt/spark-results
+       - /mnt/spark-results/median_scaled_data:/opt/spark-results/median_scaled_data
+       - /mnt/spark-results/medians:/opt/spark-results/medians
+       - /mnt/spark-results/power_filter:/opt/spark-results/power_filter
   spark-worker-1:
     build: spark-worker/.
     image: spark-worker
@@ -35,6 +39,10 @@ services:
        - /mnt/spark-data/beamformed:/opt/spark-data/beamformed
        - /mnt/spark-data/weather:/opt/spark-data/weather
        - /mnt/spark-data/metadata:/opt/spark-data/metadata
+       - /mnt/spark-results:/opt/spark-results
+       - /mnt/spark-results/median_scaled_data:/opt/spark-results/median_scaled_data
+       - /mnt/spark-results/medians:/opt/spark-results/medians
+       - /mnt/spark-results/power_filter:/opt/spark-results/power_filter
   spark-worker-2:
     build: spark-worker/.
     image: spark-worker
@@ -54,6 +62,10 @@ services:
        - /mnt/spark-data/beamformed:/opt/spark-data/beamformed
        - /mnt/spark-data/weather:/opt/spark-data/weather
        - /mnt/spark-data/metadata:/opt/spark-data/metadata
+       - /mnt/spark-results:/opt/spark-results
+       - /mnt/spark-results/median_scaled_data:/opt/spark-results/median_scaled_data
+       - /mnt/spark-results/medians:/opt/spark-results/medians
+       - /mnt/spark-results/power_filter:/opt/spark-results/power_filter
 networks:
   spark-network:
     driver: bridge
